@@ -7,23 +7,16 @@
       <p id="title">Relação de Operadoras Ativas ANS</p>
       
       <div class="menu">
-        <div class="botoes">
-        <ButtonCompo value="Excluir" :callback="() => alert('Clicado')"></ButtonCompo>
-        <ButtonCompo value="Editar" :callback="() => alert('Clicado')"></ButtonCompo>
-        <ButtonCompo value="Novo" :callback="() => alert('Clicado')"></ButtonCompo>
-      </div>
+        <HideShow/>
+        
 
-      <div class="pesquisa">
-      <InputCompo :placeHolder='Pesquisar' type="text"/>
-      </div>
+        <div class="tabela">
+          <ExampleTable/>
+        </div>
 
-      <div class="tabela">
-        <ExampleTable></ExampleTable>
-      </div>
       </div>
       
     </div>
-    
     
     <router-view/>
     
@@ -33,14 +26,14 @@
 <script>
 
 import MenuBar from '@/components/MenuBar'
-import ButtonCompo from '@/components/Buttons/ButtonCompo'
-import InputCompo from '@/components/Input/InputCompo'
-import ExampleTable from './components/Table/ExampleTable'
+import ExampleTable from '@/components/Table/ExampleTable.vue'
+
+
 
 
 
 export default {
-    components: { MenuBar, ButtonCompo, InputCompo, ExampleTable }
+    components: { MenuBar, ExampleTable } 
 }
 </script>
 
@@ -52,6 +45,7 @@ export default {
   .container{
     background-color: #FFF;
     border: 0;
+    display: block;
     margin: auto;
     margin-top: 88px;
     padding: 12px;
@@ -61,7 +55,7 @@ export default {
   #title{
     font-family: 'Roboto', sans-serif; 
     width: 600px;
-    float: left;
+    
   }
   .botoes{
     text-align: right;
@@ -81,7 +75,9 @@ export default {
 
   .tabela{
     padding: 0;
-    margin: 12px 12px 12px 12px;
+    position: relative;
+    margin-top: 29px;
+    margin: 12px;
 
   }
   

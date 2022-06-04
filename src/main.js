@@ -12,23 +12,20 @@ import 'element-ui/lib/theme-chalk/index.css';
 import { VeLocale } from "vue-easytable";
 import ptBR from "vue-easytable/libs/locale/lang/pt-BR";
 import { VeIcon } from "vue-easytable";
+// import { Papa } from "../node_modules/papaparse/papaparse.js";
 
 Vue.use(VeIcon);
 VeLocale.use(ptBR);
 Vue.use(VueEasytable);
 Vue.use(ElementUI);
+// Vue.use(Papa);
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+
 
 new Vue({
   store,
   router,
   ExampleTable,
-  render: h => h(App)
+  render: (h) => h(App)
 }).$mount('#app')
-
-
-
-
-
-
